@@ -1,7 +1,7 @@
 echo off
-set archive_path=palworld-server:/home/steam/.local/share/Steam/steamapps/common/PalServer/Pal
+set archive_path=/home/steam/.local/share/Steam/steamapps/common/PalServer/Pal
 
-docker cp  %archive_path%/Saved ./
+docker cp  palworld-server:%archive_path%/Saved ./
 echo 存档备份完成 
 
 docker stop palworld-server
@@ -14,7 +14,8 @@ docker pull liyaosong/palworld
 docker run --name palworld-server -p 8211:8211/udp -d liyaosong/palworld
 echo 新服务器启动完成
 
-docker cp ./Saved %archive_path%/
+docker cp ./Saved palworld-server:%archive_path%/
+docker exec -u 0 -it palworld-server chown -R steam:steam %archive_path%/Saved
 echo 存档迁移完成
 
 docker restart palworld-server
