@@ -1,0 +1,16 @@
+services:
+  palworld-server:
+    container_name: palworld-server
+    image: liyaosong/palworld:latest
+
+    command:
+      - -port=8211
+      - -useperfthreads
+      - -NoAsyncLoadingThread
+      - -UseMultithreadForDS
+
+    ports:
+      - "8211:8211/udp"
+
+    volumes:
+      - ./Saved:/home/steam/.local/share/Steam/steamapps/common/PalServer/Pal/Saved
