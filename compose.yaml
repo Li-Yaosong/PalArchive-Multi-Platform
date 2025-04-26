@@ -1,5 +1,6 @@
 services:
   palworld-server:
+    restart: unless-stopped
     container_name: palworld-server
     image: liyaosong/palworld:latest
 
