@@ -2,3 +2,7 @@
 	path = Saved/SaveGames/0/2783830608C245F29AB388303337323A
 	url = https://github.com/Li-Yaosong/PalArchive.git
 	branch = main
+[submodule "Saved/SaveGames/0/DD4BE8294DA633665DC2C2802ED0F1E5"]
+	path = Saved/SaveGames/0/DD4BE8294DA633665DC2C2802ED0F1E5
+	url = https://github.com/Li-Yaosong/PalArchive.git
+	branch = main
